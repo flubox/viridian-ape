@@ -1,0 +1,27 @@
+{
+    "current": 0,
+    "rooms": [
+        {
+            "model": {
+                "obj": "./data/test/room/room.obj",
+                "mtl": "./data/test/room/room.mtl"
+            },
+            "products": [
+                {
+                    "model": {
+                        "obj": "./data/test/room/mug.obj",
+                        "mtl": "./data/test/room/mug.mtl"
+                    },
+                    "camera": {
+                        "position": {
+                            "x": 0.09, "y": 0, "z": -2.19
+                        },
+                        "rotation": {
+                            "x": -40.33, "y": 172.575, "z": 0
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
