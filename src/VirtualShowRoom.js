@@ -13,7 +13,7 @@ export const VirtualShowRoom = ({config}) => {
     const cameraProduct = config.current.product > -1 ? product.camera : false;
 
     return (
-        <a-scene embedded>
+        <a-scene embedded antialias="true">
             <a-assets>
                 {room.products.map((product, i) => {
                     return (
@@ -28,6 +28,10 @@ export const VirtualShowRoom = ({config}) => {
                 ])}
 
             </a-assets>
+            <a-light type="directional" position="0 5.5 -2.288" rotation="0 0 0" intensity=".55" scale="4 4 4" color="ffc0c0"></a-light>
+            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".75" scale="4 4 4"></a-light>
+            <a-light type="ambient" intensity=".4" ></a-light>
+
             {config.current.product === -1 && (
                 <a-entity
                     camera
