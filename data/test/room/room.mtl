@@ -50,7 +50,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd 53420_sitting_room/textures/TroncoUnwrap.jpg
+map_Kd text/14592156_365679087108492_5770029927835369472_n.jpg
 
 newmtl Tronco_TextureTronco
 Ns 96.078431
@@ -61,7 +61,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd 53420_sitting_room/textures/TroncoUnwrap.jpg
+map_Kd text/14592156_365679087108492_5770029927835369472_n.jpg
 
 newmtl Vaso
 Ns 96.078431

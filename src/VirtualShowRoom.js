@@ -2,41 +2,49 @@ import React from 'react';
 
 export const VirtualShowRoom = ({config}) => {
     console.info('VirtualShowRoom', config, config.rooms[config.current]);
+    const room = config.rooms[config.current.room];
+    const roomObj = room.obj;
+    const roomMtl = room.mtl;
+    const cameraRoom = room.camera;
+    const product = room.products[config.current.product];
+    const productObj = product ? product.obj : false;
+    const productMtl = product ? product.mtl : false;
+    const cameraProduct = product ? product.camera : false;
+
     return (
-        <a-scene embedded visible={config.show}>
+        <a-scene embedded>
             <a-assets>
-                {config.rooms.map(({obj, mtl, products}, i) => {
-                    return (
-                        <div key={`room-obj-mtl-${i}`}>
-                            <a-asset-item key={`room-obj-${i}`} id={`room-obj-${i}`} src={`${obj}`} material="side: double"/>
-                            <a-asset-item key={`room-mtl-${i}`} id={`room-mtl-${i}`} src={`${mtl}`}/>
-                            {products.map((product, ii) => {
-                                <div key={`product-obj-mtl-${i}-${ii}`}>
-                                    <a-asset-item key={`product-obj-${i}-${ii}`} id={`product-obj-${i}-${ii}`} src={`${product.obj}`} material="side: double"/>
-                                    <a-asset-item key={`product-mtl-${ii}`} id={`product-mtl-${ii}`} src={`${product.mtl}`}/>
-                                </div>
-                            })}
-                        </div>
-                    )
-                })}
+                <a-asset-item key={`room-obj`} id={`room-obj`} src={roomObj} material="side: double"/>
+                {<a-asset-item key={`room-mtl`} id={`room-mtl`} src={roomMtl}/>}
+                {product && <a-asset-item key={`product-obj`} id={`product-obj`} src={productObj} material="side: double"/>}
+                {product && <a-asset-item key={`product-mtl`} id={`product-mtl`} src={productMtl}/>}
             </a-assets>
-            {config.rooms.map(({products}, i) => {
-                return products.map(({camera}, ii) => {
-                    const props = {
-                        id: `camera-${i}-${ii}`,
-                        position: `${camera.position.x} ${camera.position.y} ${camera.position.z}`,
-                        rotation: `${camera.rotation.x} ${camera.rotation.y} ${camera.rotation.z}`,
-                        active: i === config.current.camera
-                    }
-                    return (
-                        <a-camera key={`camera-${i}-${ii}`} id={`camera-${i}-${ii}`} {...props}/>
-                    );
-                })
-            })}
+            <a-camera
+                key={`camera-room`}
+                id={`camera-room`}
+                position={`${cameraRoom.position.x} ${cameraRoom.position.y} ${cameraRoom.position.z}`} 
+                rotation={`${cameraRoom.rotation.x} ${cameraRoom.rotation.y} ${cameraRoom.rotation.z}`}
+                active={config.current.product === -1}
+            />
+            {cameraProduct && <a-camera
+                key={`camera-product`}
+                id={`camera-product`}
+                position={`${cameraProduct.position.x} ${cameraProduct.position.y} ${cameraProduct.position.z}`} 
+                rotation={`${cameraProduct.rotation.x} ${cameraProduct.rotation.y} ${cameraProduct.rotation.z}`}
+                active={config.current.product !== -1}
+            />}
             {config.showOnlyProduct ? false : (
-                <a-entity id="room" obj-model={`obj: #room-obj-${config.current.room}; mtl: #room-mtl-${config.current.room}`}/>
+                <a-entity id="room" obj-model={`obj: #room-obj; mtl: #room-mtl`}/>
             ) }
-            <a-entity id="product" obj-model={`obj: #product-obj-${config.current.product}; mtl: #product-mtl-${config.current.product}`}/>
+            {product && (
+                <a-entity
+                    id="product"
+                    obj-model={`obj: #product-obj;`}
+                    position={`${product.position.x} ${product.position.y} ${product.position.z}`}
+                    rotation={`${product.rotation.x} ${product.rotation.y} ${product.rotation.z}`}
+                    scale="0.012 0.012 0.012"
+                />
+            )}
         </a-scene>
     );
 };

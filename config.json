@@ -6,12 +6,26 @@
     },
     "rooms": [
         {
-            "obj": "./data/test/room/room.obj",
-            "mtl": "./data/test/room/room.mtl",
+            "obj": "./data/test/room/tasse_redim.obj",
+            "mtl": "./data/test/room/tasse_redim.mtl",
+            "camera": {
+                "position": {
+                    "x": 0.071, "y": 0.629, "z": -1.148
+                },
+                "rotation": {
+                    "x": -25.89, "y": 7.391, "z": 0
+                }
+            },
             "products": [
                 {
-                    "obj": "./data/test/room/enamel.obj",
-                    "mtl": "./data/test/room/enamel.mtl",
+                    "obj": "./data/test/room/mug.obj",
+                    "mtl": "./data/test/room/mug.mtl",
+                    "position": {
+                        "x": 0.071, "y": 0.629, "z": -1.148
+                    },
+                    "rotation": {
+                        "x": 0, "y": 0, "z": 0
+                    },
                     "camera": {
                         "position": {
                             "x": 0.09, "y": 0, "z": -2.19
