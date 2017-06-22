@@ -15,10 +15,18 @@ export const VirtualShowRoom = ({config}) => {
     return (
         <a-scene embedded>
             <a-assets>
-                <a-asset-item key={`room-obj`} id={`room-obj`} src={roomObj} material="side: double"/>
-                {<a-asset-item key={`room-mtl`} id={`room-mtl`} src={roomMtl}/>}
-                {product && <a-asset-item key={`product-obj`} id={`product-obj`} src={productObj} material="side: double"/>}
-                {product && <a-asset-item key={`product-mtl`} id={`product-mtl`} src={productMtl}/>}
+                {room.products.map((product, i) => {
+                    return (
+                        <div key={`assets-product-${i}`}>
+                            <a-asset-item key={`product-obj-${i}`} id={`product-obj-${i}`} src={product.obj} material="side: double"/>
+                            <a-asset-item key={`product-mtl-${i}`} id={`product-mtl-${i}`} src={product.mtl}/>
+                        </div>
+                    );
+                }).concat([
+                    <a-asset-item key={`room-obj`} id={`room-obj`} src={roomObj} material="side: double"/>,
+                    <a-asset-item key={`room-mtl`} id={`room-mtl`} src={roomMtl}/>
+                ])}
+
             </a-assets>
             {config.current.product === -1 && (
                 <a-entity
@@ -38,10 +46,11 @@ export const VirtualShowRoom = ({config}) => {
                 return (
                     <a-entity
                         id={`product-${i}`}
-                        obj-model={`obj: #product-obj;`}
+                        key={`product-${i}`}
+                        obj-model={`obj: #product-obj-${i}; mtl: #product-mtl-${i}`}
                         position={`${product.position.x} ${product.position.y} ${product.position.z}`}
                         rotation={`${product.rotation.x} ${product.rotation.y} ${product.rotation.z}`}
-                        scale="0.012 0.012 0.012"
+                        scale={`${product.scale.x} ${product.scale.y} ${product.scale.z}`}
                     />
                 )
             })}
@@ -59,6 +68,7 @@ export const VirtualShowRoom = ({config}) => {
                     wasd-controls-enabled="true" position="0 1 0" 
                 />
             )}
+            <a-box width="100" height="100" depth="100" material="side: back"/>
         </a-scene>
     );
 };
