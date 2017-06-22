@@ -3,10 +3,15 @@ import {render} from 'react-dom';
 import 'aframe';
 import VirtualShowRoom from './VirtualShowRoom';
 
-const config = require('../config.json');
+let config = {...require('../config.json')};
+
+window.VirtualShowRoom = {
+    show: () => doRender({...config, show: true}),
+    hide: () => doRender({...config, show: false}),
+}
 
 console.info('config', config);
 
-const doRender = () => render(<VirtualShowRoom config={config}/>, document.querySelector('#root'));
+const doRender = config => render(<VirtualShowRoom config={config}/>, document.querySelector('#root'));
 
-document.addEventListener('DOMContentLoaded', () => doRender());
+document.addEventListener('DOMContentLoaded', () => doRender(config));
