@@ -34,17 +34,21 @@
 #viewer-filter {
   display: table-cell;
   vertical-align: top;
+  padding: 0 16px;
   width: 25%;
 }
 .filter-title {
   font-size: 14px;
   text-align: center;
 }
-#viewer-filter ul {
+#viewer-filter .products {
+  /*display: none;*/
+}
+#viewer-filter .products ul {
   list-style: none;
   padding: 0;
 }
-#viewer-filter li {
+#viewer-filter .products li {
   float: left;
   margin: 5%;
   width: 40%;
@@ -92,4 +96,37 @@
 .btn.btn-large {
     font-size: 26px !important;
     white-space: nowrap;
+}
+
+#mug-details {
+  display: none;
+  border: 2px solid #333;
+  min-height: 480px;
+  padding: 16px;
+}
+
+#mug-details .title img {
+  vertical-align: middle;
+  width: 25%;
+}
+#mug-details .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+#mug-details .price {
+  color: #777;
+}
+#mug-details .description {
+  font-size: 12px;
+  line-height: initial;
+  margin-top: 8px;
+}
+#mug-details ul {
+  color: #0f0;
+  font-size: 12px;
+  line-height: initial;
+  list-style-type: disc;
+}
+#mug-details ul li span {
+  color: black;
 }
