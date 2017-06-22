@@ -1,0 +1,9 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl Border
+Ka .8 .8 .8
+Kd .8 .8 .8
+Ks .8 .8 .8
+Ns 200.0000
+illum 3
