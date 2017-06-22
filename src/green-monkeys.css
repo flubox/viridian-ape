@@ -20,18 +20,6 @@
   right:50px;
 }
 
-.update-box-button {
-  background-color: white;
-  position: absolute;
-  right: 40px;
-  bottom: 30px;
-}
-
-.update-box-button a{
-  text-decoration: none;
-  font-weight: bold;
-}
-
 #viewer-screen {
   display: table;
   height: 480px;
@@ -65,9 +53,42 @@
   display: none;
 }
 
-@media (min-width: 800px) {
-  .cards--card {
-    float: right;
-    margin-right: -30px;
-  }
+.listing-banner--inner {
+  width : 100% !important;
+  padding : 0px !important;
+}
+
+.cards--card {
+  height: 150px;
+  width: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  position : absolute;
+  bottom: 200px;
+}
+
+.cards--card .card-description {
+      font-size : 26px !important;
+      padding-left: 50px;
+}
+
+.cards--card .card-name {
+      font-size : 26px !important;
+      padding-left: 50px;
+}
+
+.card-inner--text {
+      color: white !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      flex: 1 2 auto !important;
+      padding: 0 20px !important;
+      padding-top: 30px !important;
+      opacity: 0.6;
+}
+
+
+.btn.btn-large {
+    font-size: 26px !important;
 }
