@@ -31,3 +31,39 @@
   text-decoration: none;
   font-weight: bold;
 }
+
+#viewer-screen {
+  display: table;
+  height: 480px;
+  width: 100%;
+}
+#root {
+  display: table-cell;
+  vertical-align: top;
+  width: 75%;
+}
+#viewer-filter {
+  display: table-cell;
+  vertical-align: top;
+  width: 25%;
+}
+.filter-title {
+  font-size: 14px;
+  text-align: center;
+}
+#viewer-filter ul {
+  list-style: none;
+  padding: 0;
+}
+#viewer-filter li {
+  float: left;
+  margin: 5%;
+  width: 40%;
+}
+
+@media (min-width: 800px) {
+  .cards--card {
+    float: right;
+    margin-right: -30px;
+  }
+}
