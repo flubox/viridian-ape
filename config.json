@@ -30,7 +30,7 @@
                     "camera": {
                         "distance": 0.15,
                         "position": {
-                            "x": 0.788, "y": 0.564, "z": 2.799
+                            "x": 0.788, "y": 60.564, "z": 2.799
                         },
                         "rotation": {
                             "x": -7.448, "y": 98.320, "z": 0
@@ -38,19 +38,19 @@
                     }
                 },
                 {
-                    "obj": "./data/test/room/enamel.obj",
-                    "mtl": "./data/test/room/enamel.mtl",
+                    "obj": "./data/test/room/canvas.obj",
+                    "mtl": "./data/test/room/canvas.mtl",
                     "position": {
-                        "x": -2.316, "y": 1.825, "z": 2.874
+                        "x": 0, "y": 0, "z": 0
                     },
                     "rotation": {
                         "x": 0, "y": 0, "z": 0
                     },
-                    "scale": {"x": 0.012, "y": 0.012, "z": 0.012},
+                    "scale": {"x": 1, "y": 1, "z": 1},
                     "camera": {
                         "distance": 2,
                         "position": {
-                            "x": -0.680, "y": 1.823, "z": 2.872
+                            "x": 0, "y": 0, "z": 0
                         },
                         "rotation": {
                             "x": 0.688, "y": 0, "z": 0
