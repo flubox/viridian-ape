@@ -3,11 +3,16 @@ import {render} from 'react-dom';
 import 'aframe';
 import VirtualShowRoom from './VirtualShowRoom';
 
-let config = {...require('../config.json')};
+let config = {
+    ...require('../config.json'),
+    show: true,
+    showOnlyProduct: false,
+};
 
 window.VirtualShowRoom = {
     show: () => doRender({...config, show: true}),
     hide: () => doRender({...config, show: false}),
+    showOnlyProduct: () => doRender({...config, showOnlyProduct})
 }
 
 console.info('config', config);
