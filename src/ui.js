@@ -36,12 +36,14 @@ var unselectProducts = function () {
 
 var selectProduct = function (index, icon) {
     unselectProducts();
-    if (index === undefined) {
-        window.VirtualShowRoom.unselectProduct();
-    } else {
-        window.VirtualShowRoom.unselectProduct();
-        window.VirtualShowRoom.selectProduct(index);
-        document.querySelector(icon + ".on").style.display="inline-block";
-        document.querySelector(icon + ".off").style.display="none";
-    }
+    window.VirtualShowRoom.unselectProduct();
+
+    // The selected product must be deselected before selecting another.
+    setTimeout(function () {
+        if (index !== undefined) {
+            window.VirtualShowRoom.selectProduct(index);
+            document.querySelector(icon + ".on").style.display  = "inline-block";
+            document.querySelector(icon + ".off").style.display = "none";
+        }
+    }, 100);
 };
