@@ -33,7 +33,9 @@ export const VirtualShowRoom = ({config}) => {
                     );
                 })
             })}
-            <a-entity id="room" obj-model={`obj: #room-obj-${config.current.room}; mtl: #room-mtl-${config.current.room}`}/>
+            {config.showOnlyProduct ? false : (
+                <a-entity id="room" obj-model={`obj: #room-obj-${config.current.room}; mtl: #room-mtl-${config.current.room}`}/>
+            ) }
             <a-entity id="product" obj-model={`obj: #product-obj-${config.current.product}; mtl: #product-mtl-${config.current.product}`}/>
         </a-scene>
     );
