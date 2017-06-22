@@ -6,8 +6,8 @@
     },
     "rooms": [
         {
-            "obj": "./data/test/room/obj2.obj",
-            "mtl": "./data/test/room/obj2.mtl",
+            "obj": "./data/test/room/room1.obj",
+            "mtl": "./data/test/room/room1.mtl",
             "camera": {
                 "position": {
                     "x": 1.117, "y": 0.583, "z": 2.380
