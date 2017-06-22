@@ -1,37 +1,57 @@
 {
     "current": {
         "room": 0,
-        "product": 0,
+        "product": -1,
         "camera": 0
     },
     "rooms": [
         {
-            "obj": "./data/test/room/tasse_redim.obj",
-            "mtl": "./data/test/room/tasse_redim.mtl",
+            "obj": "./data/test/room/obj2.obj",
+            "mtl": "./data/test/room/obj2.mtl",
             "camera": {
                 "position": {
-                    "x": 0.071, "y": 0.629, "z": -1.148
+                    "x": 1.117, "y": 0.583, "z": 2.380
                 },
                 "rotation": {
-                    "x": -25.89, "y": 7.391, "z": 0
+                    "x": -9.168, "y": 110.002, "z": 0
                 }
             },
             "products": [
                 {
-                    "obj": "./data/test/room/mug.obj",
-                    "mtl": "./data/test/room/mug.mtl",
+                    "obj": "./data/test/room/enamel.obj",
+                    "mtl": "./data/test/room/enamel.mtl",
                     "position": {
-                        "x": 0.071, "y": 0.629, "z": -1.148
+                        "x": 0.657, "y": 0.488, "z": 2.786
                     },
                     "rotation": {
                         "x": 0, "y": 0, "z": 0
                     },
                     "camera": {
+                        "distance": 0.15,
                         "position": {
-                            "x": 0.09, "y": 0, "z": -2.19
+                            "x": 0.788, "y": 0.564, "z": 2.799
                         },
                         "rotation": {
-                            "x": -40.33, "y": 172.575, "z": 0
+                            "x": -7.448, "y": 98.320, "z": 0
+                        }
+                    }
+                },
+                {
+                    "obj": "./data/test/room/enamel.obj",
+                    "mtl": "./data/test/room/enamel.mtl",
+                    "position": {
+                        "x": 0.657, "y": 0.488, "z": 2.786
+                    },
+                    "rotation": {
+                        "x": 0, "y": 0, "z": 0
+                    },
+                    "camera": {
+                        "distance": 0.15,
+                        "position": {
+                            "x": 0.788, "y": 0.564, "z": 2.799
+                        },
+                        "rotation": {
+                            "x": -7.448, "y": 98.320, "z": 0
                         }
                     }
                 }
