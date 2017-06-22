@@ -58,6 +58,7 @@ typings/
 .env
 
 dist/
+dist/index.jsx
 .DS_Store
 
 src/.DS_Store
