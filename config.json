@@ -10,8 +10,8 @@
             "mtl": "./data/test/room/room.mtl",
             "products": [
                 {
-                    "obj": "./data/mug.obj",
-                    "mtl": "./data/mug.mtl",
+                    "obj": "./data/test/room/enamel.obj",
+                    "mtl": "./data/test/room/enamel.mtl",
                     "camera": {
                         "position": {
                             "x": 0.09, "y": 0, "z": -2.19
