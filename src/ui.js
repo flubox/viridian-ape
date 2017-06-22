@@ -1,14 +1,18 @@
+var viewerHidden = false;
 var toggleViewer = function () {
-    var show = document.querySelector("#root").style.display === "none";
+    var show = document.querySelector("#viewer-screen").style.display === "none";
 
-    if(show) {
+    if (viewerHidden) {
+        document.querySelector("#viewer-screen").style.position = "static";
+        document.querySelector("#magic-moment").style.display   = "none";
         window.VirtualShowRoom.show();
-        document.querySelector("#root").style.display = "block";
-        document.querySelector("#magic-moment").style.display = "none";
+        viewerHidden = false;
     } else {
         window.VirtualShowRoom.hide();
-        document.querySelector("#root").style.display = "none";
-        document.querySelector("#magic-moment").style.display = "block";
+        document.querySelector("#viewer-screen").style.position = "fixed";
+        document.querySelector("#viewer-screen").style.left     = "-100%";
+        document.querySelector("#magic-moment").style.display   = "block";
+        viewerHidden                                            = true;
     }
 };
 
