@@ -58,3 +58,7 @@ typings/
 .env
 
 dist/
+.DS_Store
+
+src/.DS_Store
+.idea/
