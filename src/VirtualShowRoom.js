@@ -3,17 +3,17 @@ import React from 'react';
 export const VirtualShowRoom = ({config}) => {
     console.info('VirtualShowRoom', config, config.rooms[config.current]);
     return (
-        <a-scene>
+        <a-scene embedded visible={config.show}>
             <a-assets>
-                {config.rooms.map(({model, products}, i) => {
+                {config.rooms.map(({obj, mtl, products}, i) => {
                     return (
                         <div key={`room-obj-mtl-${i}`}>
-                            <a-asset-item key={`room-obj-${i}`} id={`room-obj-${i}`} src={`${model.obj}`}/>
-                            <a-asset-item key={`room-mtl-${i}`} id={`room-mtl-${i}`} src={`${model.mtl}`}/>
-                            {products.map(({model}, ii) => {
-                                <div key={`room-obj-mtl-${i}-${ii}`}>
-                                    <a-asset-item key={`room-obj-${i}-${ii}`} id={`room-obj-${i}-${ii}`} src={`${model.obj}`}/>
-                                    <a-asset-item key={`room-mtl-${i}-${ii}`} id={`room-mtl-${i}-${ii}`} src={`${model.mtl}`}/>
+                            <a-asset-item key={`room-obj-${i}`} id={`room-obj-${i}`} src={`${obj}`}/>
+                            <a-asset-item key={`room-mtl-${i}`} id={`room-mtl-${i}`} src={`${mtl}`}/>
+                            {products.map((product, ii) => {
+                                <div key={`product-obj-mtl-${i}-${ii}`}>
+                                    <a-asset-item key={`product-obj-${i}-${ii}`} id={`product-obj-${i}-${ii}`} src={`${product.obj}`}/>
+                                    <a-asset-item key={`product-mtl-${ii}`} id={`product-mtl-${ii}`} src={`${product.mtl}`}/>
                                 </div>
                             })}
                         </div>
@@ -33,7 +33,8 @@ export const VirtualShowRoom = ({config}) => {
                     );
                 })
             })}
-            <a-entity obj-model={`obj: #room-obj-${config.current}; mtl: #room-mtl-${config.current}`}/>
+            <a-entity id="room" obj-model={`obj: #room-obj-${config.current.room}; mtl: #room-mtl-${config.current.room}`}/>
+            <a-entity id="product" obj-model={`obj: #product-obj-${config.current.product}; mtl: #product-mtl-${config.current.product}`}/>
         </a-scene>
     );
 };
