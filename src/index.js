@@ -3,23 +3,26 @@ import {render} from 'react-dom';
 import 'aframe';
 import VirtualShowRoom from './VirtualShowRoom';
 
-let config = {
+window.config = {
     ...require('../config.json'),
     show: true,
     showOnlyProduct: false,
 };
 
 window.VirtualShowRoom = {
-    show: () => doRender({...config, show: true}),
-    hide: () => doRender({...config, show: false}),
-    showOnlyProduct: () => doRender({...config, showOnlyProduct: true}),
-    showAll: () => doRender({...config, showOnlyProduct: false}),
-    selectProduct: productIndex => doRender({...config, current: {...config.current, product: productIndex}}),
-    unselectProduct: productIndex => doRender({...config, current: {...config.current, product: -1, camera: -1}})
+    show: () => doRender({...window.config, show: true}),
+    hide: () => doRender({...window.config, show: false}),
+    showOnlyProduct: productIndex => doRender({...window.config, showOnlyProduct: true, current: {...window.config.current, product: productIndex || -1}}),
+    showAll: () => doRender({...window.config, showOnlyProduct: false}),
+    selectProduct: productIndex => doRender({...window.config, current: {...window.config.current, product: productIndex}}),
+    unselectProduct: productIndex => doRender({...window.config, current: {...window.config.current, product: -1, camera: -1}})
 }
 
 console.info('config', config);
 
-const doRender = config => render(<VirtualShowRoom config={config}/>, document.querySelector('#root'));
+const doRender = config => {
+    window.config = config;
+    render(<VirtualShowRoom config={config}/>, document.querySelector('#root'));
+}
 
 document.addEventListener('DOMContentLoaded', () => doRender(config));
