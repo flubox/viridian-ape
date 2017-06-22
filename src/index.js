@@ -15,7 +15,7 @@ window.VirtualShowRoom = {
     showOnlyProduct: () => doRender({...config, showOnlyProduct: true}),
     showAll: () => doRender({...config, showOnlyProduct: false}),
     selectProduct: productIndex => doRender({...config, current: {...config.current, product: productIndex}}),
-    unselectProduct: productIndex => doRender({...config, current: {...config.current, product: -1}})
+    unselectProduct: productIndex => doRender({...config, current: {...config.current, product: -1, camera: -1}})
 }
 
 console.info('config', config);

@@ -21,11 +21,12 @@
                     "obj": "./data/test/room/enamel.obj",
                     "mtl": "./data/test/room/enamel.mtl",
                     "position": {
-                        "x": 0.657, "y": 0.488, "z": 2.786
+                        "x": 0.657, "y": 0.465, "z": 2.786
                     },
                     "rotation": {
                         "x": 0, "y": 0, "z": 0
                     },
+                    "scale": {"x": 0.012, "y": 0.012, "z": 0.012},
                     "camera": {
                         "distance": 0.15,
                         "position": {
@@ -40,18 +41,19 @@
                     "obj": "./data/test/room/enamel.obj",
                     "mtl": "./data/test/room/enamel.mtl",
                     "position": {
-                        "x": 0.657, "y": 0.488, "z": 2.786
+                        "x": -2.316, "y": 1.825, "z": 2.874
                     },
                     "rotation": {
                         "x": 0, "y": 0, "z": 0
                     },
+                    "scale": {"x": 0.012, "y": 0.012, "z": 0.012},
                     "camera": {
-                        "distance": 0.15,
+                        "distance": 2,
                         "position": {
-                            "x": 0.788, "y": 0.564, "z": 2.799
+                            "x": -0.680, "y": 1.823, "z": 2.872
                         },
                         "rotation": {
-                            "x": -7.448, "y": 98.320, "z": 0
+                            "x": 0.688, "y": 0, "z": 0
                         }
                     }
                 }
