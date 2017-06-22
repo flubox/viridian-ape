@@ -1,17 +1,17 @@
 {
-    "current": 0,
+    "current": {
+        "room": 0,
+        "product": 0,
+        "camera": 0
+    },
     "rooms": [
         {
-            "model": {
-                "obj": "./data/test/room/room.obj",
-                "mtl": "./data/test/room/room.mtl"
-            },
+            "obj": "./data/test/room/room.obj",
+            "mtl": "./data/test/room/room.mtl",
             "products": [
                 {
-                    "model": {
-                        "obj": "./data/test/room/mug.obj",
-                        "mtl": "./data/test/room/mug.mtl"
-                    },
+                    "obj": "./data/mug.obj",
+                    "mtl": "./data/mug.mtl",
                     "camera": {
                         "position": {
                             "x": 0.09, "y": 0, "z": -2.19
