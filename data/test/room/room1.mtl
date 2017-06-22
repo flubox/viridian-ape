@@ -1,5 +1,5 @@
 # Blender MTL File: 'scrtch112.blend'
-# Material Count: 17
+# Material Count: 18
 
 newmtl Handle
 Ns 96.078431
@@ -71,6 +71,17 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
+
+newmtl Material.006
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.126728 0.126728 0.126728
+Ke 0.912000 0.912000 0.912000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd assets/testEmpty/iStock-527219224.jpg
 
 newmtl Material.007
 Ns 96.078431
