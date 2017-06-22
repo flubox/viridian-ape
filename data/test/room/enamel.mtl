@@ -7,3 +7,11 @@ Kd .8 .8 .8
 Ks .8 .8 .8
 Ns 200.0000
 illum 3
+
+newmtl Outside
+Ka 1 1 1
+Kd .8 .8 .8
+Ks .8 .8 .8
+Ns 5.0000
+illum 3
+map_Kd assets/testEmpty/iStock-527219224.jpg
