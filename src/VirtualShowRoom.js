@@ -8,11 +8,11 @@ export const VirtualShowRoom = ({config}) => {
                 {config.rooms.map(({obj, mtl, products}, i) => {
                     return (
                         <div key={`room-obj-mtl-${i}`}>
-                            <a-asset-item key={`room-obj-${i}`} id={`room-obj-${i}`} src={`${obj}`}/>
+                            <a-asset-item key={`room-obj-${i}`} id={`room-obj-${i}`} src={`${obj}`} material="side: double"/>
                             <a-asset-item key={`room-mtl-${i}`} id={`room-mtl-${i}`} src={`${mtl}`}/>
                             {products.map((product, ii) => {
                                 <div key={`product-obj-mtl-${i}-${ii}`}>
-                                    <a-asset-item key={`product-obj-${i}-${ii}`} id={`product-obj-${i}-${ii}`} src={`${product.obj}`}/>
+                                    <a-asset-item key={`product-obj-${i}-${ii}`} id={`product-obj-${i}-${ii}`} src={`${product.obj}`} material="side: double"/>
                                     <a-asset-item key={`product-mtl-${ii}`} id={`product-mtl-${ii}`} src={`${product.mtl}`}/>
                                 </div>
                             })}
@@ -26,7 +26,7 @@ export const VirtualShowRoom = ({config}) => {
                         id: `camera-${i}-${ii}`,
                         position: `${camera.position.x} ${camera.position.y} ${camera.position.z}`,
                         rotation: `${camera.rotation.x} ${camera.rotation.y} ${camera.rotation.z}`,
-                        active: i === config.current
+                        active: i === config.current.camera
                     }
                     return (
                         <a-camera key={`camera-${i}-${ii}`} id={`camera-${i}-${ii}`} {...props}/>
