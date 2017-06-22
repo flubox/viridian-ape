@@ -42,8 +42,10 @@ var selectProduct = function (index, icon) {
     setTimeout(function () {
         if (index !== undefined) {
             window.VirtualShowRoom.selectProduct(index);
-            document.querySelector(icon + ".on").style.display  = "inline-block";
-            document.querySelector(icon + ".off").style.display = "none";
+            document.querySelector(icon + ".on").style.display               = "inline-block";
+            document.querySelector(icon + ".off").style.display              = "none";
+            document.getElementById("mug-details").style.display             = "block";
+            document.querySelector("#viewer-filter .products").style.display = "none";
         }
     }, 100);
 };
