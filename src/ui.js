@@ -49,3 +49,9 @@ var selectProduct = function (index, icon) {
         }
     }, 100);
 };
+
+var upload = function(){
+    setTimeout(function () {
+        toggleViewer();
+    }, 500);
+};

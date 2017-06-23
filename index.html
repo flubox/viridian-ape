@@ -129,7 +129,8 @@
                                     </div>
                                 </div>
                                 <div class="card-cta-wrapper">
-                                    <a class="card-cta btn btn-primary btn-large" href="javascript:toggleViewer();">UPLOAD YOUR PHOTOS</a>
+                                    <a id="upload-now" class="card-cta btn btn-primary btn-large">
+                                        <input id="uploader" type="file" onchange="upload();">UPLOAD YOUR PHOTOS</a>
                                 </div>
                             </div>
                         </div>
@@ -230,5 +231,7 @@
             </div>
         </div>
         <!-- footer -->
+
+        <script type="text/javascript">toggleViewer();</script>
     </body>
 </html>
