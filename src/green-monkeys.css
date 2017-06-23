@@ -130,3 +130,6 @@
 #mug-details ul li span {
   color: black;
 }
+#mug-details .card-cta {
+  width: 100%;
+}
