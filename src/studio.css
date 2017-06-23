@@ -17,3 +17,7 @@
 .studio-container .btn.display3d {
     height: auto;
 }
+.option-item {
+    color: #3b4153;
+    text-decoration: none;
+}
