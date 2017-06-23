@@ -32,8 +32,8 @@ export const VirtualShowRoom = ({config}) => {
 
             </a-assets>
             <a-light type="directional" position="0 5.5 -2.288" rotation="0 0 0" intensity=".35" scale="4 4 4" color="ffc0c0"/>
-            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".45" scale="4 4 4"/>
-            <a-light type="ambient" intensity=".4"/>
+            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".35" scale="4 4 4"/>
+            <a-light type="ambient" intensity=".35"/>
             <a-light type="point" position="0.102 2.195 2.964" intensity=".26"/>
 
             {config.current.product === -1 && (
