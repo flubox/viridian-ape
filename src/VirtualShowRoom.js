@@ -52,12 +52,11 @@ export const VirtualShowRoom = ({config}) => {
                 <a-entity
                     id={`product-mug-inside`}
                     key={`product-mug-inside`}
-                    obj-model={`obj: #product-obj-mug-inside; mtl: #product-mtl-mug-inside`}
+                    obj-model={`obj: #product-obj-mug-inside`}
                     position={`${product.position.x} ${product.position.y} ${product.position.z}`}
                     rotation={`${product.rotation.x} ${product.rotation.y} ${product.rotation.z}`}
                     scale={`${product.scale.x} ${product.scale.y} ${product.scale.z}`}
                     shadow="receive: true"
-                    material="shader: flat;"
                 />
             )}
             {room.products.map((product, i) => {
