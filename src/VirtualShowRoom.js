@@ -32,7 +32,7 @@ export const VirtualShowRoom = ({config}) => {
 
             </a-assets>
             <a-light type="directional" position="0 5.5 -2.288" rotation="0 0 0" intensity=".55" scale="4 4 4" color="ffc0c0"/>
-            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".75" scale="4 4 4"/>
+            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".55" scale="4 4 4"/>
             <a-light type="ambient" intensity=".4"/>
 
             {config.current.product === -1 && (
@@ -41,7 +41,7 @@ export const VirtualShowRoom = ({config}) => {
                     key={`camera-room`}
                     id={`camera-room`}
                     userHeight={`cameraRoom.position.y`}
-                    position={`${cameraRoom.position.x} ${cameraRoom.position.y} ${cameraRoom.position.z}`} 
+                    position={`${cameraRoom.position.x} ${cameraRoom.position.y} ${cameraRoom.position.z}`}
                     rotation={`${cameraRoom.rotation.x} ${cameraRoom.rotation.y} ${cameraRoom.rotation.z}`}
                     look-controls-enabled
                     active
@@ -76,7 +76,7 @@ export const VirtualShowRoom = ({config}) => {
             {config.current.product > -1 && (
                 <a-entity
                     id="product-target"
-                    position={`${product.position.x} ${product.position.y + 0.0505} ${product.position.z}`} 
+                    position={`${product.position.x} ${product.position.y + 0.0505} ${product.position.z}`}
                 />
             )}
             {config.current.product === 0 && (
@@ -86,7 +86,7 @@ export const VirtualShowRoom = ({config}) => {
                     id={`camera-product`}
                     target={`#product-target`}
                     userHeight={`product.camera.position.y`}
-                    position={`${product.camera.position.x} ${product.camera.position.y} ${product.camera.position.z}`} 
+                    position={`${product.camera.position.x} ${product.camera.position.y} ${product.camera.position.z}`}
                     rotation={`${product.camera.rotation.x} ${product.camera.rotation.y} ${product.camera.rotation.z}`}
                     distance={product.camera.distance}
                     orbit-controls look-controls-enabled="false"
