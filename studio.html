@@ -65,7 +65,7 @@
             <img src="./src/assets/photobox-logo-vintage.svg" class="header--logo">
         </a>
         <div class="header--basket">
-            <a href="http://poc.photoboxdev.io/pages/basket.html?lang=en&amp;offerid=null&amp;prodi=null&amp;images=&amp;prodPath=&amp;prodConfigs=&amp;hideConfigs=null" class="header--basket-link">Basket</a>
+            <a class="header--basket-link" href="#" onclick="showOption();return false;" style="position:absolute; z-index:90;">Basket</a>
         </div>
         <div class="menus-wrapper">
             <div class="user-nav">
@@ -312,6 +312,62 @@
     <button class="btn display3d opener" onclick="showFlatViewer();" style="position: absolute; top: 70px; right: 47px; padding: 9px 20px; font-size: 18px; border-radius: 3px; border: 0;">Flat view</button>
   </div>
 
+  <div id="option" class="studio-container" style="position:fixed; top: 70px; left:-100%; background-color: lightgrey; height:100%; width: 100%; z-index: 500;">
+  <div class="options-module">
+    <div class="options-container">
+      <div class="option-module">
+        <div class="description-wrapper">
+          <h2 class="title">Show off your best moments!</h2>
+          <p class="description">Transform your wall into a gallery by adding a frame to your art print</p>
+        </div>
+        <div class="option-breadcrumbs-container"></div>
+
+        <div class="option-wrapper">
+          <div class="option-items-wrapper">
+            <div class="option-items-container">
+              <div class="option-items-list">
+                <div class="option-item selected">
+                  <div class="option-item-radio">
+                    <input type="radio" name="option" value="default" checked="checked">
+                  </div>
+                  <div class="option-item-infos">
+                    <p class="option-item-title">
+                      <label>
+            <span>No, thanks</span>
+        </label>
+                    </p>
+                  </div>
+                </div>
+                <div class="option-item">
+                  <div class="option-item-radio">
+                    <input type="radio" name="option" value="frame">
+                  </div>
+                  <div class="option-item-infos">
+                    <p class="option-item-title">
+                      <label>
+            <span>With the natural frame</span>
+                <span class="price">+£7.00</span>
+        </label>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="btn btn-default goBack" onclick="showFlatViewer()">Back</button>
+                <button class="btn btn-secondary goToBasket"><svg class="ms-icon ms-icon--cart "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use></svg>
+                  <span>Order</span>
+                </button>
+              </div>
+            </div>
+            <div class="option-items-image" style="background-image: url('https://s3-eu-west-1.amazonaws.com/mstudio-assets/options/frame-natural.png')"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="./dist/index.js"></script>
   <script type="text/javascript">
     var showViewer = function() {
@@ -320,7 +376,12 @@
     };
     var showFlatViewer = function() {
       document.getElementById("viewer").style.left = '-100%';
+      document.getElementById("option").style.left = '-100%';
       window.VirtualShowRoom.unselectProduct();
+    };
+    var showOption = function() {
+      document.getElementById("viewer").style.left = '-100%';
+      document.getElementById("option").style.left = '0';
     };
   </script>
 
