@@ -293,10 +293,7 @@
                 </div>
             </div>
         </div></div></div>
-        <div class="module-helper"><div class="helper-layout desktop"><div class="help-opener help-opener-module u-xs-hide">
-            <svg class="ms-icon"><use xlink:href="#icon-help"></use></svg>
-        </div>
-        </div></div>
+        
         <div class="module-pm"></div>
         <div class="module-mug-display-3d"><div class="display3d-button"><div class="display3d-loading"><div class="loader"></div></div>
             <button class="btn display3d opener" onclick="showViewer();">3D view</button>
@@ -373,7 +370,10 @@
                 </button>
               </div>
             </div>
-            <div class="option-items-image" style="background-image: url('https://s3-eu-west-1.amazonaws.com/mstudio-assets/options/frame-natural.png')"></div>
+            <div class="option-items-image">
+                <div style="position: absolute;">
+                </div>
+            </div>
           </div>
         </div>
 
@@ -396,6 +396,20 @@
     var showOption = function() {
       document.getElementById("viewer").style.left = '-100%';
       document.getElementById("option").style.left = '0';
+
+        showViewer();
+        document.getElementById("viewer").style.zIndex = 900;
+        document.getElementById("viewer").style.height = 'calc(100% - 340px)';
+        document.getElementById("viewer").style.width  = '45%';
+        document.getElementById("viewer").style.left   = '50%';
+        document.getElementById("viewer").style.top    = '320px';
+
+        document.querySelector("#viewer .display3d").style.display    = 'none';
+
+        setTimeout(function(){
+            // redraw the viewer/canvas
+            window.dispatchEvent(new Event('resize'));
+        }, 10);
     };
   </script>
 
