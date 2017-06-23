@@ -19,7 +19,7 @@
                     <span class="burger-line burger-line-3"></span>
                 </div>
                 <a href="http://poc.photoboxdev.io/pages/home.html" class="header--logo-link">
-                    <img src="./src/assets/photobox-logo-vintage.svg" class="header--logo">
+                    <img src="./src/assets/photobox-logo-vintage.svg" class="header--logo" style="width:100px;">
                 </a>
                 <div class="header--basket">
                     <a href="http://poc.photoboxdev.io/pages/basket.html?lang=en&amp;offerid=null&amp;prodi=null&amp;images=&amp;prodPath=&amp;prodConfigs=&amp;hideConfigs=null" class="header--basket-link">Basket</a>
@@ -129,7 +129,8 @@
                                     </div>
                                 </div>
                                 <div class="card-cta-wrapper">
-                                    <a class="card-cta btn btn-primary btn-large" href="javascript:toggleViewer();">UPLOAD YOUR PHOTOS</a>
+                                    <a id="upload-now" class="card-cta btn btn-primary btn-large">
+                                        <input id="uploader" type="file" onchange="upload();">UPLOAD YOUR PHOTOS</a>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +201,7 @@
                         <h4 class="block--sub-title">Our Brands</h4>
                         <div>
                             <ul data-reactid="197">
-                                <li style="background-image:url('https://smash-images.photobox.com/original/354e3e7d4c51962e3f0efd06e14441ab3725ecad_photobox-logo-vintage.svg');" data-reactid="198"><a href="https://www.photobox.co.uk" data-reactid="199">Photobox</a></li>
+                                <li style="background-image:url('./src/assets/photobox-logo-vintage.svg');" data-reactid="198"><a href="https://www.photobox.co.uk" data-reactid="199">Photobox</a></li>
                                 <li style="background-image:url('https://smash-images.photobox.com/original/d909a470debc58761653405ad8aa8b84d332485c_hofmann-logo.svg');" data-reactid="200"><a href="https://www.hofmann.es" data-reactid="201">Hofmann</a></li>
                                 <li style="background-image:url('https://smash-images.photobox.com/original/86e10845052bc161a5f4cbb4f895cfb6b87ac507_moonpig-logo.svg');" data-reactid="202"><a href="https://www.moonpig.com" data-reactid="203">Moonpig</a></li>
                             </ul>
@@ -230,5 +231,7 @@
             </div>
         </div>
         <!-- footer -->
+
+        <script type="text/javascript">toggleViewer();</script>
     </body>
 </html>
