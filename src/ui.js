@@ -47,7 +47,12 @@ var selectProduct = function (index, icon) {
             document.getElementById("mug-details").style.display             = "block";
             document.querySelector("#viewer-filter .products").style.display = "none";
         }
+
+        // redraw the viewer/canvas
+        window.dispatchEvent(new Event('resize'));
     }, 100);
+
+
 };
 
 var upload = function(){
