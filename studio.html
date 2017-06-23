@@ -324,33 +324,33 @@
             <div class="option-items-container">
               <div class="option-items-list">
 
-                <div class="option-item selected">
+                <a class="option-item" id="opt-blue" href="javascript:changeColor('#4477ff', 'opt-blue');">
                   <div class="option-item-radio">
                     <input type="radio" name="option" value="frame"  checked="checked">
                   </div>
                   <div class="option-item-infos">
                     <p class="option-item-title">
                       <label>
-                        <span>Yes, I want red</span>
+                        <span>Yes, I want blue</span>
                         <span class="price">+£1.00</span>
                       </label>
                     </p>
                   </div>
-                </div>
-                <div class="option-item">
+                </a>
+                  <a class="option-item" id="opt-green" href="javascript:changeColor('#44ff77', 'opt-green');">
                   <div class="option-item-radio">
                     <input type="radio" name="option" value="frame">
                   </div>
                   <div class="option-item-infos">
                     <p class="option-item-title">
                       <label>
-                        <span>Yes, I want blue</span>
+                        <span>Yes, I want green</span>
                         <span class="price">+£1.00</span>
                     </label>
                     </p>
                   </div>
-                </div>
-                <div class="option-item">
+                </a>
+                  <a class="option-item selected" id="opt-default" href="javascript:changeColor('transparent', 'opt-default');">
                   <div class="option-item-radio">
                     <input type="radio" name="option" value="default">
                   </div>
@@ -361,7 +361,7 @@
                     </label>
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
               <div class="buttons">
                 <button class="btn btn-default goBack" onclick="showFlatViewer()">Back</button>
@@ -410,6 +410,12 @@
             // redraw the viewer/canvas
             window.dispatchEvent(new Event('resize'));
         }, 10);
+    };
+
+    var changeColor = function (color, id) {
+        document.querySelector('#product-mug-inside').setAttribute('material', 'color: ' + color);
+        document.querySelector('.option-items-list .selected').className = document.querySelector('.option-items-list .selected').className.replace('selected', '');
+        document.getElementById(id).className += ' selected';
     };
   </script>
 
