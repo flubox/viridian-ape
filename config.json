@@ -18,8 +18,8 @@
             },
             "products": [
                 {
-                    "obj": "./data/test/room/enamel.obj",
-                    "mtl": "./data/test/room/enamel.mtl",
+                    "obj": "./data/test/room/mug.obj",
+                    "mtl": "./data/test/room/color_mug.mtl",
                     "position": {
                         "x": 0.657, "y": 0.465, "z": 2.786
                     },
@@ -38,22 +38,22 @@
                     }
                 },
                 {
-                    "obj": "./data/test/room/canvas.obj",
-                    "mtl": "./data/test/room/canvas.mtl",
+                    "obj": "./data/test/room/enamel.obj",
+                    "mtl": "./data/test/room/enamel.mtl",
                     "position": {
-                        "x": 0, "y": 0, "z": 0
+                        "x": -2.441, "y": 1.5, "z": 3.238
                     },
                     "rotation": {
                         "x": 0, "y": 0, "z": 0
                     },
-                    "scale": {"x": 1, "y": 1, "z": 1},
+                    "scale": {"x": 0.01, "y": 0.01, "z": 0.01},
                     "camera": {
                         "distance": 2,
                         "position": {
-                            "x": 0, "y": 0, "z": 0
+                            "x": -0.682, "y": 1.363, "z": 2.748
                         },
                         "rotation": {
-                            "x": 0.688, "y": 0, "z": 0
+                            "x": 0, "y": 91.329, "z": 0
                         }
                     }
                 }
