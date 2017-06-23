@@ -31,9 +31,9 @@ export const VirtualShowRoom = ({config}) => {
                 ])}
 
             </a-assets>
-            <a-entity light="directional; castShadow:true;intensity: 0.4; shadowCameraVisible: true;" position="0 5.5 -2.288" rotation="0 0 0" intensity=".55" scale="4 4 4" color="ffc0c0"/>
-            <a-entity light="directional; castShadow:true;intensity: 0.4; shadowCameraVisible: true;" position="-2 0 0.88" rotation="0 0 0" intensity=".75" scale="4 4 4"/>
-            <a-entity light="ambient; castShadow:true;intensity: 0.4; shadowCameraVisible: true;" intensity=".4"/>
+            <a-light type="directional" position="0 5.5 -2.288" rotation="0 0 0" intensity=".55" scale="4 4 4" color="ffc0c0"/>
+            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".75" scale="4 4 4"/>
+            <a-light type="ambient" intensity=".4"/>
 
             {config.current.product === -1 && (
                 <a-entity
