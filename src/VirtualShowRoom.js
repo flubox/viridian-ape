@@ -1,4 +1,5 @@
 import React from 'react';
+require('aframe');
 require('aframe-orbit-controls-component');
 
 export const VirtualShowRoom = ({config}) => {
