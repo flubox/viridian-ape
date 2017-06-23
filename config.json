@@ -18,8 +18,8 @@
             },
             "products": [
                 {
-                    "obj": "./data/test/room/mug.obj",
-                    "mtl": "./data/test/room/color_mug.mtl",
+                    "obj": "./data/test/room/outside_mug.obj",
+                    "mtl": "./data/test/room/outside_mug.mtl",
                     "position": {
                         "x": 0.657, "y": 0.465, "z": 2.786
                     },
