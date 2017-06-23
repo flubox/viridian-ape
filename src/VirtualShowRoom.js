@@ -60,16 +60,22 @@ export const VirtualShowRoom = ({config}) => {
             })}
             {config.current.product > -1 && (
                 <a-entity
+                    id="product-target"
+                    position={`${product.position.x} ${product.position.y + 0.0505} ${product.position.z}`} 
+                />
+            )}
+            {config.current.product === 0 && (
+                <a-entity
                     camera
                     key={`camera-product`}
                     id={`camera-product`}
-                    target={`#product-${config.current.product}`}
+                    target={`#product-target`}
                     userHeight={`product.camera.position.y`}
                     position={`${product.camera.position.x} ${product.camera.position.y} ${product.camera.position.z}`} 
                     rotation={`${product.camera.rotation.x} ${product.camera.rotation.y} ${product.camera.rotation.z}`}
                     distance={product.camera.distance}
                     orbit-controls look-controls-enabled="false"
-                    wasd-controls-enabled="true" position="0 1 0" 
+                    wasd-controls-enabled="true"
                 />
             )}
             <a-box width="100" height="100" depth="100" material="side: back"/>
