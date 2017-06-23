@@ -133,3 +133,11 @@
 #mug-details .card-cta {
   width: 100%;
 }
+#upload-now {
+  position: relative;
+}
+#uploader {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+}
