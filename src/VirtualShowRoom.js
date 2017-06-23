@@ -2,6 +2,7 @@ import React from 'react';
 require('aframe-orbit-controls-component');
 
 export const VirtualShowRoom = ({config}) => {
+    const {products} = config;
     console.log('VirtualShowRoom', config);
     const room = config.rooms[config.current.room];
     const roomObj = room.obj;
@@ -15,6 +16,8 @@ export const VirtualShowRoom = ({config}) => {
     return (
         <a-scene embedded antialias="true">
             <a-assets>
+                <a-asset-item key={`product-obj-mug-inside`} id={`product-obj-mug-inside`} src="./data/test/room/inside_mug.obj" material="side: double"/>
+                <a-asset-item key={`product-mtl-mug-inside`} id={`product-mtl-mug-inside`} src="./data/test/room/inside_mug.mtl"/>
                 {room.products.map((product, i) => {
                     return (
                         <div key={`assets-product-${i}`}>
@@ -28,9 +31,9 @@ export const VirtualShowRoom = ({config}) => {
                 ])}
 
             </a-assets>
-            <a-light type="directional" position="0 5.5 -2.288" rotation="0 0 0" intensity=".55" scale="4 4 4" color="ffc0c0"></a-light>
-            <a-light type="directional" position="-2 0 0.88" rotation="0 0 0" intensity=".75" scale="4 4 4"></a-light>
-            <a-light type="ambient" intensity=".4" ></a-light>
+            <a-entity light="directional; castShadow:true;intensity: 0.4; shadowCameraVisible: true;" position="0 5.5 -2.288" rotation="0 0 0" intensity=".55" scale="4 4 4" color="ffc0c0"/>
+            <a-entity light="directional; castShadow:true;intensity: 0.4; shadowCameraVisible: true;" position="-2 0 0.88" rotation="0 0 0" intensity=".75" scale="4 4 4"/>
+            <a-entity light="ambient; castShadow:true;intensity: 0.4; shadowCameraVisible: true;" intensity=".4"/>
 
             {config.current.product === -1 && (
                 <a-entity
@@ -45,6 +48,18 @@ export const VirtualShowRoom = ({config}) => {
                 />
             )}
             <a-entity id="room" obj-model={`obj: #room-obj; mtl: #room-mtl`} visible={!config.showOnlyProduct}/>
+            {product && (
+                <a-entity
+                    id={`product-mug-inside`}
+                    key={`product-mug-inside`}
+                    obj-model={`obj: #product-obj-mug-inside; mtl: #product-mtl-mug-inside`}
+                    position={`${product.position.x} ${product.position.y} ${product.position.z}`}
+                    rotation={`${product.rotation.x} ${product.rotation.y} ${product.rotation.z}`}
+                    scale={`${product.scale.x} ${product.scale.y} ${product.scale.z}`}
+                    shadow="receive: true"
+                    material="shader: flat;"
+                />
+            )}
             {room.products.map((product, i) => {
                 console.info('product', product);
                 return (
@@ -55,6 +70,7 @@ export const VirtualShowRoom = ({config}) => {
                         position={`${product.position.x} ${product.position.y} ${product.position.z}`}
                         rotation={`${product.rotation.x} ${product.rotation.y} ${product.rotation.z}`}
                         scale={`${product.scale.x} ${product.scale.y} ${product.scale.z}`}
+                        shadow="receive: true"
                     />
                 )
             })}
